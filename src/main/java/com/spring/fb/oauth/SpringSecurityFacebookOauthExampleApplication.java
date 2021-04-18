@@ -19,6 +19,7 @@ public class SpringSecurityFacebookOauthExampleApplication {
 	public String fbLogin(Principal principal) {
 		Map<String,Object> details = (Map<String, Object>) ((OAuth2Authentication)principal).getUserAuthentication().getDetails();
 		String username = details.get("name").toString();
+		System.out.println(details);
 		return "Hello "+username;
 	}
 	
